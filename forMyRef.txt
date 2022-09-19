@@ -1,0 +1,10 @@
+
+routes are used so that the app.js doesnt get crowded
+they are more like used as middleware (hence they are accessed using 'use')
+
+
+controllers are more like functions, they are used so that routes dont get crowded
+
+
+you can set global variables in postman to quickly type
+
