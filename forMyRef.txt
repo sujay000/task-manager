@@ -8,3 +8,28 @@ controllers are more like functions, they are used so that routes dont get crowd
 
 you can set global variables in postman to quickly type
 
+
+// mongo_db mongoose
+
+db / connect.js
+    -> used to connect mongoose with mongo_db
+
+models / Task.js
+    -> create schema & models (constructors of the schema)
+        model created with two arguments.
+    
+    to create/add document(instance of the model) to the database
+model_name.create({"name": "you can hardcode this way too"})
+
+
+the model name must start with a captial (uppercase alphabet)
+
+when more info is passed in the post request or so,
+only the properties that are present in the schema are taken,
+the rest are ignored
+
+
+to set validation in the schema,
+make it as an object
+
+
