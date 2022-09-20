@@ -33,3 +33,47 @@ to set validation in the schema,
 make it as an object
 
 
+/////////////////////////////////////////////////////
+    FROM THE DOCS : MONGOOSE
+https://mongoosejs.com/docs/queries.html
+https://mongoosejs.com/docs/api.html#model_Model-find
+
+Mongoose models provide several static helper functions for CRUD operations. Each of these functions returns a mongoose Query object.
+
+    Model.deleteMany()
+    Model.deleteOne()
+    Model.find()
+    Model.findById()
+    Model.findByIdAndDelete()
+    Model.findByIdAndRemove()
+    Model.findByIdAndUpdate()
+    Model.findOne()
+    Model.findOneAndDelete()
+    Model.findOneAndRemove()
+    Model.findOneAndReplace()
+    Model.findOneAndUpdate()
+    Model.replaceOne()
+    Model.updateMany()
+    Model.updateOne()
+
+A mongoose query can be executed in one of two ways. First, if you pass in a callback function, Mongoose will execute the query asynchronously and pass the results to the callback.
+
+A query also has a .then() function, and thus can be used as a promise.
+
+
+// find all documents
+await MyModel.find({});
+
+// find all documents named john and at least 18
+await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec();
+
+// executes, passing results to callback
+MyModel.find({ name: 'john', age: { $gte: 18 }}, function (err, docs) {});
+
+// executes, name LIKE john and only selecting the "name" and "friends" fields
+await MyModel.find({ name: /john/i }, 'name friends').exec();
+
+// passing options
+await MyModel.find({ name: /john/i }, null, { skip: 10 }).exec();
+
+/////////////////////////////////////////////////////
