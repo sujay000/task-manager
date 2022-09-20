@@ -2,9 +2,9 @@ const Task = require('../models/Task')
 
 const getAllTasks = async (req, res) => {
     try {
-        const allTasks = await Task.find({})
-        return res.json({ allTasks })
-        //return res.json({allTasks : allTasks })
+        const tasks = await Task.find({})
+        return res.json({ tasks })
+        //return res.json({tasks : tasks })
     } catch (error) {
         return res.json({ msg: error })
     }
