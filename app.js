@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const PORT = 3000
 const tasks = require('./routes/tasks')
 const connectDB = require('./db/connect')
 const path = require('path')
@@ -17,6 +16,8 @@ app.use('/api/v1/tasks', tasks)
 
 // if the route is not of the above then it is not found
 app.use(notFound)
+
+const PORT = process.env.PORT || 3000
 
 const start = async () => {
     try {
